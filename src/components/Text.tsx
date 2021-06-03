@@ -1,7 +1,11 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
-const Text: FunctionComponent = function ({ text }) {
-    return <div>{text}</div>;
+type TextProps = {
+  text: string;
 };
+
+const Text: React.FC<TextProps> = ({ text }) => (
+  <div>{text}</div>
+);
 
 export default Text;
