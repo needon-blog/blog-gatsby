@@ -20,6 +20,7 @@ module.exports = {
     //     path: `${__dirname}/contents`,
     //   },
     // },
+    `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // this (optional) plugin enables Progressive Web App + Offline functionality

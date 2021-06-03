@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import { graphql, Link } from 'gatsby';
-import Text from 'components/Text';
+import { graphql } from 'gatsby';
+import { Global, css } from '@emotion/react';
+import styled from "@emotion/styled";
 
 interface InfoPageProps {
   data: {
@@ -14,6 +15,28 @@ interface InfoPageProps {
   };
 }
 
+const globalStyle = css`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-size: 20px;
+  }
+`;
+
+const TextStyle = styled.div`
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
+`;
+
+const Text1 = styled.div`
+  font-size: 20px;
+  font-weight: 700;
+`;
+
+
 const InfoPage: FunctionComponent<InfoPageProps> = function ({
   data: {
     site: {
@@ -22,12 +45,12 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
   },
 }) {
   return (
-    <div>
-      <Text text={title} />
-      <Text text={description} />
-      <Text text={author} />
-      <Link to="/">To Main</Link>
-    </div>
+    <TextStyle>
+      <Global styles={globalStyle} />
+      <TextStyle>{title}</TextStyle>
+      <Text1>{description}</Text1>
+      {author}
+    </TextStyle>
   );
 };
 
